@@ -1,0 +1,127 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #0779e4 3px solid;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin-top: 5px;
+    font-size: 1.2em;
+}
+
+header .contact-info a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+section {
+    padding: 20px 0;
+    border-bottom: #cccccc 1px solid;
+}
+
+section h2 {
+    text-align: center;
+    color: #35424a;
+    margin-bottom: 20px;
+}
+
+#about img {
+    display: block;
+    margin: 20px auto;
+    border-radius: 50%;
+    max-width: 150px;
+}
+
+.education-item, .experience-item, .project-item {
+    background: #ffffff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.education-item h3, .experience-item h3, .project-item h3 {
+    margin-top: 0;
+    color: #0779e4;
+}
+
+.education-item .year, .experience-item .date, .project-item .tech-year {
+    font-style: italic;
+    color: #777;
+    font-size: 0.9em;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.skill-chip {
+    background: #0779e4;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9em;
+}
+
+#skill-visual, #project-visual {
+    margin-top: 30px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#skill-visual h3, #project-visual h3 {
+     color: #35424a;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+    color: #ffffff;
+    background-color: #35424a;
+}
+
+/* Basic Responsiveness */
+@media(max-width: 600px) {
+    .container {
+        width: 95%;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+} 

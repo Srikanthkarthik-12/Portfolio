@@ -19,6 +19,24 @@ migrate_working_dir/
 # VS Code related
 .vscode/
 
+# Dependencies
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+
+# Build artifacts
+/dist/
+/build/
+
+# Vercel
+.vercel/
+
+# Optional: if you have a Python virtual environment
+/venv/
+/.venv/
+
 # Flutter/Dart/Pub related
 **/doc/api/
 **/ios/Flutter/.last_build_id
@@ -28,7 +46,6 @@ migrate_working_dir/
 .packages
 .pub-cache/
 .pub/
-/build/
 pubspec.lock
 
 # Web related
