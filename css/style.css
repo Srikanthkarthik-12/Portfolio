@@ -1,127 +1,259 @@
+:root {
+    --primary-color: #4a90e2; /* A modern blue */
+    --secondary-color: #50e3c2; /* A bright accent green */
+    --text-color: #333;
+    --background-color: #f8f8f8;
+    --card-background: #ffffff;
+    --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --heading-color: #333;
+}
+
 body {
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif; /* Using a modern font */
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 .container {
-    width: 80%;
-    margin: auto;
+    width: 90%;
+    max-width: 1200px; /* Max width for larger screens */
+    margin: 0 auto;
     overflow: hidden;
     padding: 0 20px;
 }
 
 header {
-    background: #35424a;
+    background: var(--primary-color);
     color: #ffffff;
-    padding-top: 30px;
-    min-height: 70px;
-    border-bottom: #0779e4 3px solid;
+    padding: 60px 0;
     text-align: center;
+    margin-bottom: 40px; /* More space after header */
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5em;
+    font-size: 3em; /* Larger heading */
+    font-weight: 700; /* Bolder font weight */
 }
 
 header p {
-    margin-top: 5px;
-    font-size: 1.2em;
+    margin-top: 10px;
+    font-size: 1.5em; /* Larger subtitle */
+    color: rgba(255, 255, 255, 0.9);
 }
 
-header .contact-info a {
+header .contact-info {
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+
+header .contact-info span, header .contact-info a {
     color: #ffffff;
     text-decoration: none;
-    margin: 0 5px;
+    margin: 0 10px; /* More space between contact items */
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+header .contact-info a:hover {
+    color: var(--secondary-color); /* Accent color on hover */
 }
 
 section {
-    padding: 20px 0;
-    border-bottom: #cccccc 1px solid;
+    padding: 40px 0; /* More padding for sections */
+    /* border-bottom: 1px solid #e0e0e0; */ /* Removed bottom border for cleaner look */
+}
+
+section:last-child {
+    border-bottom: none;
 }
 
 section h2 {
     text-align: center;
-    color: #35424a;
-    margin-bottom: 20px;
+    color: var(--heading-color);
+    margin-bottom: 40px; /* More space below section titles */
+    font-size: 2.2em;
+    position: relative;
+}
+
+section h2::after { /* Underline effect */
+    content: '';
+    width: 60px;
+    height: 4px;
+    background: var(--secondary-color);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
 }
 
 #about img {
     display: block;
-    margin: 20px auto;
+    margin: 20px auto 30px auto; /* Adjusted margin */
     border-radius: 50%;
-    max-width: 150px;
+    max-width: 180px; /* Larger image */
+    border: 5px solid var(--card-background); /* White border around image */
+    box-shadow: var(--card-shadow); /* Shadow for image */
 }
 
 .education-item, .experience-item, .project-item {
-    background: #ffffff;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: var(--card-background);
+    padding: 25px; /* More padding */
+    margin-bottom: 25px; /* More space between items */
+    border-radius: 8px; /* More rounded corners */
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect transition */
+}
+
+.education-item:hover, .experience-item:hover, .project-item:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
 }
 
 .education-item h3, .experience-item h3, .project-item h3 {
     margin-top: 0;
-    color: #0779e4;
+    color: var(--primary-color);
+    font-size: 1.5em; /* Larger item titles */
+    margin-bottom: 5px;
+}
+
+.education-item p, .experience-item p, .project-item p {
+    margin-bottom: 5px;
 }
 
 .education-item .year, .experience-item .date, .project-item .tech-year {
-    font-style: italic;
-    color: #777;
-    font-size: 0.9em;
+    font-style: normal; /* Removed italics */
+    color: #555; /* Darker gray */
+    font-size: 1em;
 }
 
 .skills-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 5px;
+    gap: 12px; /* More space between chips */
+    margin-top: 10px;
 }
 
 .skill-chip {
-    background: #0779e4;
+    background: var(--primary-color);
     color: #ffffff;
-    padding: 5px 10px;
-    border-radius: 15px;
-    font-size: 0.9em;
+    padding: 8px 15px; /* More padding */
+    border-radius: 20px; /* More rounded */
+    font-size: 0.95em;
+    font-weight: 500; /* Medium font weight */
+    transition: background-color 0.3s ease; /* Hover effect */
+}
+
+.skill-chip:hover {
+    background-color: #357abd; /* Slightly darker blue on hover */
 }
 
 #skill-visual, #project-visual {
-    margin-top: 30px;
-    padding: 20px;
-    background: #ffffff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 40px; /* More space above visualization sections */
+    padding: 30px; /* More padding */
+    background: var(--card-background);
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    text-align: center; /* Center align content */
 }
 
 #skill-visual h3, #project-visual h3 {
-     color: #35424a;
+     color: var(--heading-color);
+     margin-bottom: 20px;
+}
+
+/* Ensure embedded visualizations fill container */
+#skill-visual div, #project-visual div, #skill-visual iframe, #project-visual iframe {
+    width: 100%;
+    height: 400px; /* Example height, adjust as needed */
+    border: none;
 }
 
 footer {
     text-align: center;
-    padding: 20px 0;
-    margin-top: 20px;
+    padding: 30px 0; /* More padding */
+    margin-top: 40px; /* More space above footer */
     color: #ffffff;
     background-color: #35424a;
+    font-size: 0.9em;
 }
 
-/* Basic Responsiveness */
-@media(max-width: 600px) {
+/* Responsive Adjustments */
+@media(max-width: 768px) {
     .container {
         width: 95%;
     }
 
+    header {
+        padding: 40px 0;
+    }
+
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    header p {
+        font-size: 1.2em;
+    }
+
+    section {
+        padding: 30px 0;
+    }
+
+    section h2 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+
+    .education-item, .experience-item, .project-item {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .education-item h3, .experience-item h3, .project-item h3 {
+        font-size: 1.3em;
+    }
+
+    #skill-visual, #project-visual {
+        padding: 20px;
+        margin-top: 30px;
+    }
+}
+
+@media(max-width: 480px) {
     header h1 {
         font-size: 2em;
     }
 
     header p {
         font-size: 1em;
+    }
+
+    header .contact-info {
+        font-size: 0.9em;
+    }
+
+    section h2 {
+        font-size: 1.5em;
+    }
+
+     .education-item h3, .experience-item h3, .project-item h3 {
+        font-size: 1.1em;
+    }
+
+    .education-item .year, .experience-item .date, .project-item .tech-year {
+        font-size: 0.8em;
+    }
+
+    .skill-chip {
+        padding: 6px 12px;
+        font-size: 0.85em;
+    }
+
+    #skill-visual div, #project-visual div, #skill-visual iframe, #project-visual iframe {
+         height: 300px; /* Smaller height on small screens */
     }
 } 
